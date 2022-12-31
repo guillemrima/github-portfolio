@@ -26,13 +26,18 @@
         <div class="container__repos">
             <p id="repos">REPOS:</p>
         </div>
+        <h2>Issues</h2>
+        <div id="issues"></div>
     </div>
 
     <script> 
-        const URL = "https://api.github.com/users/guillemrima";
+        const REPO = "github-portfolio"
+        const USER = "guillemrima"
+        const ISSUES_URL = `https://api.github.com/repos/${USER}/${REPO}/issues`
+        const PROFILE_URL = "https://api.github.com/users/guillemrima";
         const repoURL = "https://api.github.com/users/guillemrima/repos";
 
-        const resultados = fetch(URL).then(
+        fetch(PROFILE_URL).then(
             (response) => {
                 const data = response.json().then(
                     (json) => {
@@ -42,8 +47,24 @@
             }
         )
 
-        
+        fetch(ISSUES_URL).then(res =>{
+            res.json().then(data => {
+                console.log(data)
+                hydrateIssues(data);
+            })
+        })
 
+        function hydrateIssues(json){
+            const el = document.getElementById("issues");
+
+            json.forEach(issue => {
+                const issueEl = document.createElement("a")
+                issueEl.innerHTML = issue.title
+                issueEl.href = issue.number
+                el.appendChild(issueEl)
+                
+            })
+        }
 
         function hydrateDOM(json){
             console.log(json);
