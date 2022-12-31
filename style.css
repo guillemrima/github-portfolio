@@ -29,7 +29,7 @@ body{
     height: 300px;
     overflow: hidden;
     margin: auto;
-    border: 2px solid rgba(255, 255, 255, 0.346);
+    border: 2px solid rgba(255, 255, 255, 0.985);
 }
 
 .container__avatar img{
@@ -56,17 +56,39 @@ body{
     width: 100%;
     justify-content: space-around;
     margin-top: 15px;
+    margin-bottom: 20px;
 }
 
+.container__repos{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+    background-color: rgba(255, 255, 255, 0.19);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+
+.container__repos h2{
+    font-size: 2em;
+    font-weight: 700;
+}
 .container__issues{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     color: white;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.19);
+    border-radius: 10px;
+    padding: 10px;
 }
 
-.container__issues h1{
+.container__issues h2{
     font-weight: 700;
+    font-size: 2em;
 }
 
 .container__issues a{
