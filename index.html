@@ -23,7 +23,7 @@
                 <p class="followers" id="followers">FOLLOWERS:</p><p id="number__followers"></p>
             </div>
         </div>
-        <div class="container__repos">
+        <div class="container__repos" id="repos">
             <h2>REPOSITORIES</h2>
         </div>
         <div class="container__issues" id="issues">
@@ -36,7 +36,7 @@
         const USER = "guillemrima"
         const ISSUES_URL = `https://api.github.com/repos/${USER}/${REPO}/issues`
         const PROFILE_URL = "https://api.github.com/users/guillemrima";
-        const repoURL = "https://api.github.com/users/guillemrima/repos";
+        const REPO_URL = `https://api.github.com/users/${USER}/repos`;
 
         fetch(PROFILE_URL, {
             cache: "force-cache" //PARA FORZAR LA CACHE Y ASI CONSUMIR MENOS RECURSOS A LA HORA DE ENTRAR EN LA PÁGINA
@@ -56,6 +56,23 @@
                 hydrateIssues(data);
             })
         })
+
+        fetch(REPO_URL).then(res =>{
+            res.json().then(data =>{
+                console.log(data)
+                hydrateRepo(data);
+            })
+        })
+
+        function hydrateRepo(json){
+            const repoContainer = document.getElementById("repos");
+            json.forEach(repo =>{
+                const repoEl = document.createElement("p");
+                repoEl.innerHTML = repo.name;
+                repoContainer.appendChild(repoEl);  
+            })
+
+        }
 
         function hydrateIssues(json){
             const el = document.getElementById("issues");
