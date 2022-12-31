@@ -25,10 +25,17 @@ body{
 
 .container__avatar{
     border-radius: 100%;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    margin: auto;
+    border: 2px solid rgba(255, 255, 255, 0.346);
+}
+
+.container__avatar img{
     width: 100%;
     height: 100%;
-    overflow: hidden;
-    border: 2px solid rgba(245, 245, 245, 0.467);
+    object-fit: cover;
 }
 
 .container__profile p, h1{
@@ -50,3 +57,21 @@ body{
     justify-content: space-around;
     margin-top: 15px;
 }
+
+.container__issues{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: white;
+}
+
+.container__issues h1{
+    font-weight: 700;
+}
+
+.container__issues a{
+    text-decoration: none;
+    color: white;
+}
+
+

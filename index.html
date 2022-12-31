@@ -10,7 +10,7 @@
 <body>
     <div class="container__profile">
         <div class="container__avatar">
-            <img class="avatar" id="avatar" src="" width="300px">
+            <img class="avatar" id="avatar" src="">
         </div>
         <h1 class="name" id="name">NOMBRE:</h1>
         <p class="bio" id="bio">BIO:</p>
@@ -24,10 +24,11 @@
             </div>
         </div>
         <div class="container__repos">
-            <p id="repos">REPOS:</p>
+            <h2>REPOSITORIES</h2>
         </div>
-        <h2>Issues</h2>
-        <div id="issues"></div>
+        <div class="container__issues" id="issues">
+            <h2>ISSUES</h2>
+        </div>
     </div>
 
     <script> 
@@ -37,7 +38,9 @@
         const PROFILE_URL = "https://api.github.com/users/guillemrima";
         const repoURL = "https://api.github.com/users/guillemrima/repos";
 
-        fetch(PROFILE_URL).then(
+        fetch(PROFILE_URL, {
+            cache: "force-cache" //PARA FORZAR LA CACHE Y ASI CONSUMIR MENOS RECURSOS A LA HORA DE ENTRAR EN LA PÁGINA
+        }).then(
             (response) => {
                 const data = response.json().then(
                     (json) => {
