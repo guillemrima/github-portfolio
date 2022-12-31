@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs</title>
+</head>
+<body>
+    <a href="/">Inicio</a>
+    <h1 id="title"></h1>
+    <div id="content"></div>
+
+    <script>
+        console.log("hola");
+        //SACAMOS ISSUE NUMBER DE LA URL
+
+        const currentURL = new URL(window.location.href)
+        const ISSUE_NUMBER = currentURL.searchParams.get("issue")
+
+        const ISSUE_URL = `https://api.github.com/repos/guillemrima/github-portfolio/issues/${ISSUE_NUMBER}`
+
+        fetch(ISSUE_URL).then(res =>{
+            res.json().then(json =>{
+                hydrateIssue(json);
+            })
+        })
+
+        function hydrateIssue(json){
+            const titleEl = document.getElementById("title");
+            const contentEl = document.getElementById("content");
+
+            titleEl.innerHTML = json.title
+            contentEl.innerHTML = json.body
+        }
+    </script>
+</body>
+</html>

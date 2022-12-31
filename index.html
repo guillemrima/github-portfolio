@@ -60,7 +60,7 @@
             json.forEach(issue => {
                 const issueEl = document.createElement("a")
                 issueEl.innerHTML = issue.title
-                issueEl.href = issue.number
+                issueEl.href = `blog?issue=${issue.number}`
                 el.appendChild(issueEl)
                 
             })
