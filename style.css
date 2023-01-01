@@ -59,6 +59,12 @@ body{
     margin-bottom: 20px;
 }
 
+.container__following, .container__followers{
+    background-color: rgba(255, 255, 255, 0.282);
+    padding: 5px 25px;
+    border-radius: 100px;
+}
+
 .container__repos{
     color: white;
     display: flex;
