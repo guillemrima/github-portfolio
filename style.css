@@ -1,8 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+}
+@font-face {
+    font-family: principal;
+    src: url(/fuente/Mont-ExtraLightDEMO.otf);
+}
+@font-face {
+    font-family: principalBold;
+    src: url(/fuente/Mont-HeavyDEMO.otf);
+}
+:root{
+    --mainColor: #f5cb5c;
+    --backgroundColor: #242423;
+    --backgroundColor2: #333533;
+    --secundaryColor: #e8eddf;
+    --tertiaryColor: #cfdbd5;
+    --bordePrueba: 2px solid red;
+    --paddingGlobal: 0px 20%;
 }
 
+
+
+body{
+    background-color: var(--backgroundColor);
+}
+
+header{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;;
+    padding: var(--paddingGlobal);
+    align-items: center;
+    border: var(--bordePrueba);
+
+}
+
+.container__logo{
+    color: var(--secundaryColor);
+    font-family: principalBold;
+}
+
+.container__rrss{
+    display: flex;
+    list-style: none;
+}
+
+
+.rrss__icon{
+    width: 25px;
+    height: 25px;
+    margin: 0px 10px;
+}
+
+.rrss__icon img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: contrast(0);
+}
+
+.container__hero{
+    padding: var(--paddingGlobal);
+    display: flex;
+    align-items: center;
+    border: var(--bordePrueba);
+}
