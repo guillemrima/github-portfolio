@@ -5,111 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+    <script src="/script.js" async defer></script>
     <title>Portfolio Github | Guillemrima</title>
 </head>
 <body>
-    <div class="container__profile">
-        <div class="container__avatar">
-            <img class="avatar" id="avatar" src="">
+    <header class="container__navegator" id="navegator">
+        <div class="container__logo">
+            <h1 class="logo" id="logo"></h1>
         </div>
-        <h1 class="name" id="name">NOMBRE:</h1>
-        <p class="bio" id="bio">BIO:</p>
-        <p class="location" id="location">LOCATION:</p>
-        <div class="container__follow">
-            <div class="container__following">
-                <p class="following" id="following">FOLLOWING:</p><p id="number__following"></p>
-            </div>
-            <div class="container__followers">
-                <p class="followers" id="followers">FOLLOWERS:</p><p id="number__followers"></p>
-            </div>
+        <nav class="container__rrss">
+            <ul class="list__rrss" id="rrss">
+                <li class="github"></li>
+                <li class="linkedin"></li>
+                <li class="twitter"></li>
+                <li class="instagram"></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container__hero">
+        <div class="container__jumbotron">
+            <h1 class="name" id="name">JUMBOTRON</h1>  
+            <p class="bio" id="bio">BIO:</p>
+            <p class="location" id="location">LOCATION:</p>
+            <p id="number__following"></p>
+            <p id="number__followers"></p>
         </div>
-        <div class="container__repos" id="repos">
-            <h2>REPOSITORIES</h2>
-        </div>
-        <div class="container__issues" id="issues">
-            <h2>ISSUES</h2>
-        </div>
-    </div>
+    </section>
+<img class="avatar" id="avatar" src="">
 
-    <script> 
-        const REPO = "github-portfolio"
-        const USER = "guillemrima"
-        const ISSUES_URL = `https://api.github.com/repos/${USER}/${REPO}/issues`
-        const PROFILE_URL = "https://api.github.com/users/guillemrima";
-        const REPO_URL = `https://api.github.com/users/${USER}/repos`;
-
-        fetch(PROFILE_URL, {
-            cache: "force-cache" //PARA FORZAR LA CACHE Y ASI CONSUMIR MENOS RECURSOS A LA HORA DE ENTRAR EN LA PÁGINA
-        }).then(
-            (response) => {
-                const data = response.json().then(
-                    (json) => {
-                        hydrateDOM(json);
-                    }
-                );
-            }
-        )
-
-        fetch(ISSUES_URL).then(res =>{
-            res.json().then(data => {
-                console.log(data)
-                hydrateIssues(data);
-            })
-        })
-
-        fetch(REPO_URL).then(res =>{
-            res.json().then(data =>{
-                console.log(data)
-                hydrateRepo(data);
-            })
-        })
-
-        function hydrateRepo(json){
-            const repoContainer = document.getElementById("repos");
-            json.forEach(repo =>{
-                const repoEl = document.createElement("p");
-                repoEl.innerHTML = repo.name;
-                repoContainer.appendChild(repoEl);  
-            })
-
-        }
-
-        function hydrateIssues(json){
-            const el = document.getElementById("issues");
-
-            json.forEach(issue => {
-                const issueEl = document.createElement("a")
-                issueEl.innerHTML = issue.title
-                issueEl.href = `blog?issue=${issue.number}`
-                el.appendChild(issueEl)
-                
-            })
-        }
-
-        function hydrateDOM(json){
-            console.log(json);
-            const name = json.name;
-            const location = json.location;
-            const bio = json.bio;
-            const avatar = json.avatar_url;
-            const following = json.following;
-            const followers = json.followers;
-
-            nameEl.innerHTML = name;
-            locationEl.innerHTML = location;
-            avatarEl.src = avatar;
-            bioEl.innerHTML = bio;
-            followingEl.innerHTML = following;   
-            followersEl.innerHTML = followers;    
-        }
-
-        const nameEl = document.getElementById("name");
-        const avatarEl = document.getElementById("avatar");
-        const bioEl = document.getElementById("bio");
-        const locationEl = document.getElementById("location");
-        const followersEl = document.getElementById("number__followers");
-        const followingEl = document.getElementById("number__following");
-
-    </script>
+<div class="container__repos" id="repos">
+<h2>REPOSITORIES</h2>
+</div>
+<div class="container__issues" id="issues">
+<h2>ISSUES</h2>
+</div>
 </body>
 </html>

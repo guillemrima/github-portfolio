@@ -7,32 +7,22 @@
     <title>Blogs</title>
 </head>
 <body>
-    <a href="/">Inicio</a>
-    <h1 id="title"></h1>
-    <div id="content"></div>
+    <div class="contain__character" id="character">
+
+    </div>
 
     <script>
-        console.log("hola");
-        //SACAMOS ISSUE NUMBER DE LA URL
+        const swURL = 'https://pokeapi.co/api/v2/pokemon/499/';
 
-        const currentURL = new URL(window.location.href)
-        const ISSUE_NUMBER = currentURL.searchParams.get("issue")
-
-        const ISSUE_URL = `https://api.github.com/repos/guillemrima/github-portfolio/issues/${ISSUE_NUMBER}`
-
-        fetch(ISSUE_URL).then(res =>{
-            res.json().then(json =>{
-                hydrateIssue(json);
-            })
+        fetch(swURL).then(response => response.json())
+        .then(data =>{
+            let character = document.getElementById("character");
+            character.innerHTML = `<p>${data.name}</p>
+            <p>${data.order}</p>
+            <img src="${data.sprites.front_default}" width = 300px/>`
+            console.log(data);
         })
 
-        function hydrateIssue(json){
-            const titleEl = document.getElementById("title");
-            const contentEl = document.getElementById("content");
-
-            titleEl.innerHTML = json.title
-            contentEl.innerHTML = json.body
-        }
     </script>
 </body>
 </html>
