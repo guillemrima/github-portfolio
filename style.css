@@ -12,13 +12,14 @@
     src: url(/fuente/Mont-HeavyDEMO.otf);
 }
 :root{
-    --mainColor: #f5cb5c;
+    --mainColor: white;
     --backgroundColor: #242423;
     --backgroundColor2: #333533;
-    --secundaryColor: #e8eddf;
+    --secundaryColor: #f5cb5c;
     --tertiaryColor: #cfdbd5;
     --bordePrueba: 2px solid red;
     --paddingGlobal: 0px 20%;
+    --margenTop: 20px;
 }
 
 
@@ -28,17 +29,16 @@ body{
 }
 
 header{
-    margin-top: 20px;
+    margin-top: var(--margenTop);
     display: flex;
     justify-content: space-between;;
     padding: var(--paddingGlobal);
     align-items: center;
-    border: var(--bordePrueba);
 
 }
 
 .container__logo{
-    color: var(--secundaryColor);
+    color: var(--mainColor);
     font-family: principalBold;
 }
 
@@ -62,8 +62,36 @@ header{
 }
 
 .container__hero{
+    margin-top: var(--margenTop);
     padding: var(--paddingGlobal);
     display: flex;
     align-items: center;
-    border: var(--bordePrueba);
+    justify-content: space-between;
+    position: relative;
+}
+
+
+.container__jumbotron h1{
+    font-size: 4.5em;
+    font-family: principalBold;
+    color: var(--mainColor);
+    text-align: left;
+}
+
+.container__jumbotron p{
+    font-size: 1.5em;
+    font-family: principal;
+    color: var(--secundaryColor);
+    text-align: center;
+}
+
+.container__avatar{
+    width: 900px;
+    top: 0;
+}
+
+.container__avatar img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
