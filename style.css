@@ -121,6 +121,7 @@ header{
     color: white;
     background-color: var(--secundaryColor);
     font-weight: 900;
+    scale: 110%;
 }
 
 .separator{
@@ -131,12 +132,60 @@ header{
 
 .container__repositories{
     padding: var(--paddingGlobal); 
-    margin: var(--margenTop); 
+    margin-top:var(--margenTop); 
+    margin-bottom: var(--margenTop);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container__repositories h2{
     font-family: principalBold;
     font-size: 8em;
     color: white;
-    text-align: center;
+}
+.repos{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    padding: var(--paddingGlobal);
+    justify-content: center;
+}
+.repo{
+    width:350px;
+    height: 350px;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.repo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 400ms;
+    z-index: 1;
+}
+
+.repo:hover img{
+    scale: 120%;
+}
+.repo:hover .repoCodeURL{
+    opacity: 100;
+}
+.repoCodeURL{
+    position: absolute;
+    z-index: 99;
+    color: white;
+    top: 20%;
+    left: 24%;
+    font-size: 3em;
+    text-decoration: none;
+    font-family: principal;
+    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.469);
+    border-radius: 15px;
+    padding: 1px 20px;
+    opacity: 0;
+    transition: 500ms;
 }

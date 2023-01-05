@@ -1,6 +1,6 @@
 const REPO = "github-portfolio"
         const USER = "guillemrima"
-        const ISSUES_URL = `https://api.github.com/repos/${USER}/${REPO}/issues`
+        const ISSUES_URL = `https://api.github.com/repos/${USER}/${REPO}/issues`;
         const PROFILE_URL = "https://api.github.com/users/guillemrima";
         const REPO_URL = `https://api.github.com/users/${USER}/repos`;
 
@@ -10,7 +10,7 @@ const REPO = "github-portfolio"
             (response) => {
                 const data = response.json().then(
                     (json) => {
-                        hydrateDOM(json);
+                        hydrateProfile(json);
                     }
                 );
             }
@@ -25,17 +25,30 @@ const REPO = "github-portfolio"
 
         fetch(REPO_URL).then(res =>{
             res.json().then(data =>{
-                console.log(data)
                 hydrateRepo(data);
             })
         })
 
         function hydrateRepo(json){
             const repoContainer = document.getElementById("repos");
-            for (repo in json){
-                const repoEl = document.createElement("p");
-                repoEl.innerHTML = repo.name;
-                repoContainer.appendChild(repoEl);
+            for (repoJson of json){
+            const repoDiv = document.createElement("div");
+            const repoImg = document.createElement("img");
+            const repoCodeURL = document.createElement("a");
+
+            repoCodeURL.innerHTML = "Code";
+            repoCodeURL.href = `https://github.com/${USER}/${repoJson.name}`;
+            repoImg.src= `/img/repos/${repoJson.name}.png`;
+            
+
+            repoDiv.appendChild(repoImg);
+            repoDiv.appendChild(repoCodeURL);
+            repoContainer.appendChild(repoDiv);
+
+
+            repoDiv.classList.add("repo");
+            repoCodeURL.classList.add("repoCodeURL");
+
             }
             // json.forEach(repo =>{
             //     const repoEl = document.createElement("p");
@@ -56,7 +69,7 @@ const REPO = "github-portfolio"
             })
         }
 
-        function hydrateDOM(json){
+        function hydrateProfile(json){
             console.log(json);
             const name = json.name;
             const location = json.location;
