@@ -32,11 +32,15 @@ const REPO = "github-portfolio"
 
         function hydrateRepo(json){
             const repoContainer = document.getElementById("repos");
-            json.forEach(repo =>{
+            for (repo in json){
                 const repoEl = document.createElement("p");
                 repoEl.innerHTML = repo.name;
-                repoContainer.appendChild(repoEl);  
-            })
+                repoContainer.appendChild(repoEl);
+            }
+            // json.forEach(repo =>{
+            //     const repoEl = document.createElement("p");
+            //     repoEl.innerHTML = repo.name;
+            //     repoContainer.appendChild(repoEl);  
 
         }
 
