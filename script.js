@@ -37,7 +37,7 @@ const REPO = "github-portfolio"
             const repoCodeURL = document.createElement("a");
             const repoPagesURL = document.createElement("a");
 
-            repoImg.src= `img/repos/${repoJson.name}.png`;
+            repoImg.src= `./img/repos/${repoJson.name}.png`;
 
             repoCodeURL.innerHTML = "Code";
             repoCodeURL.href = `https://github.com/${USER}/${repoJson.name}`;
