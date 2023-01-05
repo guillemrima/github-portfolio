@@ -35,25 +35,30 @@ const REPO = "github-portfolio"
             const repoDiv = document.createElement("div");
             const repoImg = document.createElement("img");
             const repoCodeURL = document.createElement("a");
+            const repoPagesURL = document.createElement("a");
+
+            repoImg.src= `/img/repos/${repoJson.name}.png`;
 
             repoCodeURL.innerHTML = "Code";
             repoCodeURL.href = `https://github.com/${USER}/${repoJson.name}`;
-            repoImg.src= `/img/repos/${repoJson.name}.png`;
             
+            
+            repoPagesURL.innerHTML = "Pages";
+            repoPagesURL.href =`https://${USER}.github.io/${repoJson.name}/`;
 
             repoDiv.appendChild(repoImg);
             repoDiv.appendChild(repoCodeURL);
+            repoDiv.appendChild(repoPagesURL);
             repoContainer.appendChild(repoDiv);
 
 
             repoDiv.classList.add("repo");
             repoCodeURL.classList.add("repoCodeURL");
+            repoCodeURL.classList.add("repoURL");
+            repoPagesURL.classList.add("repoPagesURL");
+            repoPagesURL.classList.add("repoURL");
 
             }
-            // json.forEach(repo =>{
-            //     const repoEl = document.createElement("p");
-            //     repoEl.innerHTML = repo.name;
-            //     repoContainer.appendChild(repoEl);  
 
         }
 

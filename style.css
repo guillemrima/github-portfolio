@@ -154,9 +154,9 @@ header{
 .repo{
     width:350px;
     height: 350px;
-    background-color: white;
     overflow: hidden;
     position: relative;
+    background-color: var(--secundaryColor);
 }
 
 .repo img{
@@ -169,8 +169,9 @@ header{
 
 .repo:hover img{
     scale: 120%;
+    filter:grayscale(100)
 }
-.repo:hover .repoCodeURL{
+.repo:hover .repoURL{
     opacity: 100;
 }
 .repoCodeURL{
@@ -181,9 +182,26 @@ header{
     left: 24%;
     font-size: 3em;
     text-decoration: none;
-    font-family: principal;
+    font-family: principalBold;
     border: 1px solid white;
-    background-color: rgba(255, 255, 255, 0.469);
+    background-color: rgba(112, 7, 7, 0.728);
+    border-radius: 15px;
+    padding: 1px 20px;
+    opacity: 0;
+    transition: 500ms;
+}
+
+.repoPagesURL{
+    position: absolute;
+    z-index: 99;
+    color: white;
+    top: 60%;
+    left: 24%;
+    font-size: 3em;
+    text-decoration: none;
+    font-family: principalBold;
+    border: 1px solid white;
+    background-color: rgba(7, 112, 16, 0.728);
     border-radius: 15px;
     padding: 1px 20px;
     opacity: 0;
