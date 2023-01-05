@@ -5,11 +5,11 @@
 }
 @font-face {
     font-family: principal;
-    src: url(./fuente/Mont-ExtraLightDEMO.otf);
+    src: url(fuente/Mont-ExtraLightDEMO.otf);
 }
 @font-face {
     font-family: principalBold;
-    src: url(./fuente/Mont-HeavyDEMO.otf);
+    src: url(fuente/Mont-HeavyDEMO.otf);
 }
 :root{
     --mainColor: white;
