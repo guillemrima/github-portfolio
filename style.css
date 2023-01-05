@@ -122,3 +122,23 @@ header{
     background-color: var(--secundaryColor);
     font-weight: 900;
 }
+
+.separator{
+    border: 1px solid white;
+    margin: var(--paddingGlobal);
+    margin-top: 100px;
+}
+
+.container__repositories{
+    padding: var(--paddingGlobal); 
+    margin: var(--margenTop); 
+}
+
+.container__repositories h2{
+    font-family: principalBold;
+    font-size: 8em;
+    color: white;
+    text-align: center;
+}
+
+.repos{
