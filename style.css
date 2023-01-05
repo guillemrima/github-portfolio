@@ -70,6 +70,11 @@ header{
     position: relative;
 }
 
+.container__jumbotron{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .container__jumbotron h1{
     font-size: 4.5em;
@@ -79,8 +84,8 @@ header{
 }
 
 .container__jumbotron p{
-    font-size: 1.5em;
-    font-family: principal;
+    font-size: 2em;
+    font-family: principalBold;
     color: var(--secundaryColor);
     text-align: center;
 }
@@ -94,4 +99,26 @@ header{
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+.container__follow{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.container__follow p{
+    font-family: principal;
+    font-size: 2em;
+    border: 1px solid;
+    padding: 10px 15px;
+    margin: 0px 20px;
+    border-radius: 1px;
+    transition: all 500ms;
+}
+
+.container__follow p:hover{
+    color: white;
+    background-color: var(--secundaryColor);
+    font-weight: 900;
 }
