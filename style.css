@@ -34,7 +34,6 @@ header{
     justify-content: space-between;;
     padding: var(--paddingGlobal);
     align-items: center;
-    border: var(--bordePrueba);
     width: 100%;
 
 }
@@ -236,11 +235,48 @@ header{
 @media screen  and (max-width: 800px){
     .container__navegator{
         justify-content: center;
-        border: var(--bordePrueba);
 
     }
     .container__rrss{
         display: none
+    }
+
+    .container__hero{
+        justify-content: center;
+    }
+
+    .container__jumbotron h1{
+        font-size: 2.5em;
+    }
+
+    .container__jumbotron p{
+        font-size: 2em;
+    }
+
+    .container__follow p{
+        font-size: 1em;
+    }
+
+    .container__repositories h2{
+        font-size: 2.5em;
+    }
+    .container__issues{
+        display: none;
+    }
+
+    .container__avatar{
+        display: none
+    }
+    .separator{
+        margin-top: 30px;
+    }
+
+    .repos{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: var(--paddingGlobal);
+        justify-content: center;
     }
 };
     
