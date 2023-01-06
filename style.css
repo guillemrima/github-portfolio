@@ -34,6 +34,8 @@ header{
     justify-content: space-between;;
     padding: var(--paddingGlobal);
     align-items: center;
+    border: var(--bordePrueba);
+    width: 100%;
 
 }
 
@@ -232,11 +234,13 @@ header{
     display: none;
 }
 @media screen  and (max-width: 800px){
-    .pc{
-        display: none
+    .container__navegator{
+        justify-content: center;
+        border: var(--bordePrueba);
+
     }
-    .alert__mobile{
-        display: contents
+    .container__rrss{
+        display: none
     }
 };
     
