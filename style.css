@@ -223,3 +223,20 @@ header{
     color: var(--secundaryColor);
     font-family: principal;
 }
+
+
+.alert__mobile{
+    color: white;
+    font-size: 0.5em;
+    font-family: principalBold;
+    display: none;
+}
+@media screen  and (max-width: 800px){
+    .pc{
+        display: none
+    }
+    .alert__mobile{
+        display: contents
+    }
+};
+    
