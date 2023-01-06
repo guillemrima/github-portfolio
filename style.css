@@ -139,7 +139,7 @@ header{
     align-items: center;
 }
 
-.container__repositories h2{
+.section__h2{
     font-family: principalBold;
     font-size: 8em;
     color: white;
@@ -182,7 +182,7 @@ header{
     left: 24%;
     font-size: 3em;
     text-decoration: none;
-    font-family: principalBold;
+    font-family: principal;
     border: 1px solid white;
     background-color: rgba(112, 7, 7, 0.728);
     border-radius: 15px;
@@ -199,11 +199,27 @@ header{
     left: 24%;
     font-size: 3em;
     text-decoration: none;
-    font-family: principalBold;
+    font-family: principal;
     border: 1px solid white;
     background-color: rgba(7, 112, 16, 0.728);
     border-radius: 15px;
     padding: 1px 20px;
     opacity: 0;
     transition: 500ms;
+}
+
+.container__issues{
+    padding: var(--paddingGlobal); 
+    margin-top: 40px; 
+    margin-bottom: var(--margenTop);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__issues a{
+    font-size: 2em;
+    text-decoration: none;
+    color: var(--secundaryColor);
+    font-family: principal;
 }
