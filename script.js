@@ -1,6 +1,6 @@
 const REPO = "github-portfolio"
         const USER = "guillemrima"
-        const ISSUES_URL = `https://api.github.com/repos/${USER}/${REPO}/issues`;
+        const ISSUES_URL = `http://localhost:3000/issues`;
         const PROFILE_URL = "https://api.github.com/users/guillemrima";
         const REPO_URL = `https://api.github.com/users/${USER}/repos`;
 
